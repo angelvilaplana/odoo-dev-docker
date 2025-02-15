@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bin/clidb psql -h db -d odoo -U odoo "$@"

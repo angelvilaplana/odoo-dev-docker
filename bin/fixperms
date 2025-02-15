@@ -1,0 +1,11 @@
+#!/bin/bash
+
+docker-compose exec -u root odoo bash -c 'chown -R odoo:odoo /opt/odoo'
+docker-compose exec -u root odoo bash -c 'chown -R odoo:odoo /etc/odoo'
+docker-compose exec -u root odoo bash -c 'chown -R odoo:odoo /var/log'
+docker-compose exec -u root odoo bash -c 'chown -R odoo:odoo /var/lib/odoo'
+docker-compose exec -u root odoo bash -c 'chown -R odoo:odoo /mnt/extra-addons'
+docker-compose exec -u root db   bash -c 'chown -R postgres:postgres /var/lib/postgresql'
+
+sudo chown -R $(id -u):$(id -g) odoo
+sudo chown -R $(id -u):$(id -g) postgresql

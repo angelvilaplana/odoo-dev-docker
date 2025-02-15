@@ -1,0 +1,9 @@
+#!/bin/bash
+
+[ -z "$1" ] && echo "Please specify a CLI command (ex. ls)" && exit
+
+if [ -t 0 ]; then
+    bin/docker-compose exec odoo "$@"
+else
+    bin/docker-compose exec -T odoo "$@"
+fi

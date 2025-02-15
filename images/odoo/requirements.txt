@@ -1,0 +1,5 @@
+# Debug in VSCode
+debugpy
+
+# Debug in PyCharm
+pydevd-pycharm

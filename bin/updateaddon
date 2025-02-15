@@ -1,0 +1,12 @@
+#!/bin/bash
+
+bin/cliodoo /opt/odoo/odoo/odoo-bin -d odoo -u $1 \
+    --xmlrpc-port 8001 \
+    --db_port 5432 \
+    --db_host db \
+    --db_user odoo \
+    --db_password odoo \
+    --stop-after-init \
+    --i18n-overwrite \
+    --logfile= \
+    --workers=0

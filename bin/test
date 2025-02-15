@@ -1,0 +1,13 @@
+docker-compose exec -u odoo odoo \
+/opt/odoo/odoo/odoo-bin \
+    -i $1 \
+    -d $2 \
+    --test-enable \
+    --xmlrpc-port 8001 \
+    --db_port 5432 \
+    --db_host db \
+    --db_user odoo \
+    --db_password odoo \
+    --logfile=/var/log/odoo/tests.log \
+    --log-level=test \
+    --stop-after-init

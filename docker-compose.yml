@@ -1,0 +1,23 @@
+services:
+  db:
+    build: images/postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+    env_file: ./env/db.env
+
+  odoo:
+    build: images/odoo
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+      - "8888:8888"
+    volumes:
+      - ./odoo/odoo:/opt/odoo/odoo
+      - ./odoo/addons:/mnt/extra-addons
+      - ./odoo/lib:/var/lib/odoo
+      - ./odoo/etc:/etc/odoo
+      - ./odoo/log:/var/log/odoo
+    env_file: ./env/odoo.env

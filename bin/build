@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ODOO_USER_ID=$(id -u)
+POSTGRES_USER_ID=$(id -u)
+DOCKER_COMPOSE="docker-compose -f docker-compose.yml"
+
+$DOCKER_COMPOSE build --build-arg POSTGRES_USER_ID=$POSTGRES_USER_ID db
+$DOCKER_COMPOSE build --build-arg ODOO_USER_ID=$ODOO_USER_ID odoo
+$DOCKER_COMPOSE up -d --remove-orphans "$@"
