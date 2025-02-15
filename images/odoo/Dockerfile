@@ -91,7 +91,7 @@ RUN pip3 install -r requirements.txt --ignore-installed && rm requirements.txt
 # Expose Odoo services
 EXPOSE 8069 8071 8072
 
-ENV ODOO_VERSION 18.0
+ENV ODOO_VERSION 17.0
 ENV ODOO_RC /etc/odoo/odoo.conf
 
 COPY wait-for-psql.py /usr/local/bin/wait-for-psql.py
