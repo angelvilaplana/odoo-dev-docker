@@ -27,20 +27,19 @@ bin/fixperms
 # Wait a few minutes, then you can access Odoo at https://localhost:8069.
 ```
 
-## Commands
+## Commands  
 
-To be most easy, you can execute the follow commands inside the project:
+For simplicity, you can run the following commands inside the project:  
 
-- bin/build: Build the images of docker.
-- bin/clidb: Run any CLI command in the database.
-- bin/cliodoo: Run any CLI command in the odoo container.
-- bin/docker-compose: Run the composer binary.
-- bin/fixperms: This will fix filesystem permissions within the container.
-- bin/odoosh: Access to the odoo terminal to execute code in Odoo.
-- bin/psql: Access to the database to execute queries in Postgres.
-- bin/restart: Restart the containers.
-- bin/start: Start the containers.
-- bin/stop: Stop the containers
-- bin/test: Run tests specifyng the module and database
-- bin/updateaddon: Update addon 
-
+- **`bin/build`**: Builds the Docker images.  
+- **`bin/clidb`**: Runs any CLI command in the database container.  
+- **`bin/cliodoo`**: Runs any CLI command in the Odoo container.  
+- **`bin/docker-compose`**: Runs the `docker-compose` binary.  
+- **`bin/fixperms`**: Fixes filesystem permissions within the container.  
+- **`bin/odoosh`**: Opens an Odoo shell to execute code in Odoo.  
+- **`bin/psql`**: Opens a PostgreSQL shell to execute queries in the database.  
+- **`bin/restart`**: Restarts the containers.  
+- **`bin/start`**: Starts the containers.  
+- **`bin/stop`**: Stops the containers.  
+- **`bin/test`**: Runs tests, specifying the module and database.  
+- **`bin/updateaddon`**: Updates an addon.  
