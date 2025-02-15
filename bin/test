@@ -5,8 +5,7 @@ source env/odoo.env
 DB_NAME=$1
 TEST_TAGS=$2
 
-docker-compose exec -u odoo odoo \
-/opt/odoo/odoo/odoo-bin \
+bin/cliodoo /opt/odoo/odoo/odoo-bin \
     -d ${DB_NAME}
     --test-enable \
     --test-enable \
