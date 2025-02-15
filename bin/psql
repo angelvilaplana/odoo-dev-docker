@@ -1,3 +1,8 @@
 #!/bin/bash
 
-bin/clidb psql -h db -d odoo -U odoo "$@"
+source env/odoo.env
+
+DB_NAME=$1
+shift
+
+bin/clidb bash -c "PGPASSWORD=odoo psql -h db -d ${DB_NAME} -U ${USER} $@"

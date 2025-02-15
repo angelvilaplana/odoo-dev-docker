@@ -1,13 +1,18 @@
+source env/odoo.env
+
+DB_NAME=$1
+TEST_TAGS=$2
+
 docker-compose exec -u odoo odoo \
 /opt/odoo/odoo/odoo-bin \
-    -i $1 \
-    -d $2 \
+    -d ${DB_NAME}
     --test-enable \
+    --test-enable \
+    --test-tags=$2 \
     --xmlrpc-port 8001 \
     --db_port 5432 \
-    --db_host db \
-    --db_user odoo \
-    --db_password odoo \
-    --logfile=/var/log/odoo/tests.log \
-    --log-level=test \
+    --db_host ${HOST} \
+    --db_user ${USER} \
+    --db_password ${PASSWORD} \
+    --logfile= \
     --stop-after-init
