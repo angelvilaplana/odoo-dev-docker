@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim
+FROM debian:bullseye-slim
 
 SHELL ["/bin/bash", "-xo", "pipefail", "-c"]
 
@@ -47,12 +47,13 @@ RUN apt-get update && \
         liblcms2-dev \
         libblas-dev \
         libatlas-base-dev \
-    && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.bookworm_amd64.deb \
+    && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.buster_amd64.deb \
+    && echo 'ea8277df4297afc507c61122f3c349af142f31e5 wkhtmltox.deb' | sha1sum -c - \
     && apt-get install -y --no-install-recommends ./wkhtmltox.deb \
     && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
 
 # install latest postgresql-client
-RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ bookworm-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
+RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ bullseye-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
     && GNUPGHOME="$(mktemp -d)" \
     && export GNUPGHOME \
     && repokey='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8' \
@@ -91,7 +92,7 @@ RUN pip3 install -r requirements.txt --ignore-installed && rm requirements.txt
 # Expose Odoo services
 EXPOSE 8069 8071 8072
 
-ENV ODOO_VERSION 18.0
+ENV ODOO_VERSION 14.0
 ENV ODOO_RC /etc/odoo/odoo.conf
 
 COPY wait-for-psql.py /usr/local/bin/wait-for-psql.py
