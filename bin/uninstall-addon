@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source env/odoo.env
+
+DATABASE=$1
+ADDON=$2
+
+bin/restart odoo
+command="self.env['ir.module.module'].search([('name', '=', '$ADDON')]).button_immediate_uninstall()"
+echo $command | bin/odoosh $DATABASE

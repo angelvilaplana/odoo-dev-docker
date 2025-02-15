@@ -42,4 +42,6 @@ For simplicity, you can run the following commands inside the project:
 - **`bin/start`**: Starts the containers.  
 - **`bin/stop`**: Stops the containers.  
 - **`bin/test`**: Runs tests, specifying the module and database.  
-- **`bin/updateaddon`**: Updates an addon.  
+- **`bin/install-addon`**: Install an addon.
+- **`bin/update-addon`**: Updates an addon.
+- **`bin/uninstall-addon`**: Uninstall an addon.

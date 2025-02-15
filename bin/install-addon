@@ -3,12 +3,16 @@
 source env/odoo.env
 
 DATABASE=$1
+ADDON=$2
 
-bin/cliodoo /opt/odoo/odoo/odoo-bin shell \
-    -d ${DATABASE} \
+bin/cliodoo odoo -d ${DATABASE} -i ${ADDON} \
     --xmlrpc-port 8001 \
     --db_port 5432 \
     --db_host ${HOST} \
     --db_user ${USER} \
     --db_password ${PASSWORD} \
+    --stop-after-init \
+    --logfile= \
     --workers=0
+
+bin/restart odoo
