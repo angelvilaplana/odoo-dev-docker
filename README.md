@@ -15,9 +15,9 @@ To set up and run the environment, you need:
 To set up the environment, execute the following commands in the terminal:  
 
 ```bash
-ODOO_DIR=odoo-18
+ODOO_DIR=odoo-15
 
-git clone git@github.com:angelvilaplana/odoo-dev-docker.git --depth 1 --branch 18.0 ${ODOO_DIR}
+git clone git@github.com:angelvilaplana/odoo-dev-docker.git --depth 1 --branch 15.0 ${ODOO_DIR}
 cd ${ODOO_DIR}
 
 rm -rf .git
