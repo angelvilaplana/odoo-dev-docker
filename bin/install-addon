@@ -5,7 +5,7 @@ source env/odoo.env
 DATABASE=$1
 ADDON=$2
 
-bin/cliodoo odoo -d ${DATABASE} -i ${ADDON} \
+bin/cliodoo /opt/odoo/odoo/odoo-bin -d ${DATABASE} -i ${ADDON} \
     --xmlrpc-port 8001 \
     --db_port 5432 \
     --db_host ${HOST} \
